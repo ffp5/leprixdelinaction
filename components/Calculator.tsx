@@ -344,8 +344,13 @@ export default function Calculator() {
                   <Button
                     className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-6 text-lg"
                     size="lg"
+                    asChild
                   >
-                    Recevoir mon audit personnalisé
+                    <a
+                      href={`mailto:sf.florido-poka@luwai.fr?subject=Demande d'audit personnalisé IA&body=Bonjour,%0D%0A%0D%0AJe souhaite réaliser un audit personnalisé suite à mon calcul sur leprixdelinaction.fr.%0D%0A%0D%0AMes résultats :%0D%0A- Coût annuel estimé : ${formatCurrency(results.total)}%0D%0A- Inefficacité opérationnelle : ${formatCurrency(results.inefficacite)}%0D%0A- Croissance manquée : ${formatCurrency(results.opportunites)}%0D%0A- Coûts cachés : ${formatCurrency(results.coutsCache)}%0D%0A%0D%0AMon profil :%0D%0A- Secteur : ${secteur}%0D%0A- Nombre de salariés : ${nbSalaries}%0D%0A- CA annuel : ${caTranche}%0D%0A- Niveau adoption IA : ${niveauAdoption}%0D%0A%0D%0AMerci de me recontacter.%0D%0A%0D%0ACordialement`}
+                    >
+                      Faire mon audit personnalisé
+                    </a>
                   </Button>
                   <p className="text-xs text-center text-muted-foreground">
                     Un expert vous contactera sous 24h pour analyser ces résultats
