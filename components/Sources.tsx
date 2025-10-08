@@ -12,6 +12,12 @@ import {
 export default function Sources() {
   const sources = [
     {
+      icon: <DocumentChartBarIcon className="w-6 h-6" />,
+      title: "LUWAI - Étude Adoption IA",
+      description: "Synthèse complète des études sur l'adoption de l'IA en entreprise",
+      url: "https://www.notion.so/LUWAI-Etude-Adaption-IA-255317046eeb81e59e3cc3f018902d4f"
+    },
+    {
       icon: <BuildingLibraryIcon className="w-6 h-6" />,
       title: "DARES",
       description: "Évolution des salaires de base dans le secteur privé",
