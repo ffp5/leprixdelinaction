@@ -55,7 +55,7 @@ export default function Calculator() {
             Calculez vos pertes en <span className="text-accent">3 étapes</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Évaluation scientifique basée sur votre profil d'entreprise
+            Évaluation scientifique basée sur votre profil d&apos;entreprise
           </p>
 
           {/* Progress indicator */}
@@ -78,7 +78,7 @@ export default function Calculator() {
               <div>
                 <CardTitle className="text-2xl">
                   {step === 1 && "Profil de votre entreprise"}
-                  {step === 2 && "Usage actuel de l'IA"}
+                  {step === 2 && "Usage actuel de l&apos;IA"}
                   {step === 3 && "Vos résultats"}
                 </CardTitle>
                 <CardDescription>
@@ -97,7 +97,7 @@ export default function Calculator() {
                 {/* Secteur */}
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-foreground">
-                    Secteur d'activité <span className="text-accent">*</span>
+                    Secteur d&apos;activité <span className="text-accent">*</span>
                   </label>
                   <Select value={secteur} onValueChange={(v) => setSecteur(v as Secteur)}>
                     <SelectTrigger className="w-full" aria-label="Sélectionner votre secteur">
@@ -132,7 +132,7 @@ export default function Calculator() {
                 {/* CA annuel */}
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-foreground">
-                    Chiffre d'affaires annuel <span className="text-accent">*</span>
+                    Chiffre d&apos;affaires annuel <span className="text-accent">*</span>
                   </label>
                   <Select value={caTranche} onValueChange={(v) => setCATranche(v as CATranche)}>
                     <SelectTrigger className="w-full" aria-label="Sélectionner votre CA">
@@ -155,11 +155,11 @@ export default function Calculator() {
                 {/* Niveau d'adoption */}
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-foreground">
-                    Niveau d'adoption de l'IA <span className="text-accent">*</span>
+                    Niveau d&apos;adoption de l&apos;IA <span className="text-accent">*</span>
                   </label>
                   <Select value={niveauAdoption} onValueChange={(v) => setNiveauAdoption(v as NiveauAdoption)}>
                     <SelectTrigger className="w-full" aria-label="Niveau adoption IA">
-                      <SelectValue placeholder="Quel est votre niveau d'adoption ?" />
+                      <SelectValue placeholder="Quel est votre niveau d&apos;adoption ?" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="Aucun">Aucun usage</SelectItem>
@@ -195,7 +195,7 @@ export default function Calculator() {
                   {/* Veille */}
                   <div className="space-y-3">
                     <div className="flex justify-between items-center">
-                      <label className="text-sm text-foreground">Veille et recherche d'information</label>
+                      <label className="text-sm text-foreground">Veille et recherche d&apos;information</label>
                       <span className="text-sm font-semibold text-primary">{veille}%</span>
                     </div>
                     <Slider
@@ -251,7 +251,7 @@ export default function Calculator() {
               <div className="space-y-6 animate-fadeIn" aria-live="polite">
                 {/* Main result */}
                 <div className="text-center p-8 bg-accent/5 rounded-2xl border-2 border-accent/20">
-                  <p className="text-sm font-semibold text-muted-foreground mb-2">Coût estimé de l'inaction IA</p>
+                  <p className="text-sm font-semibold text-muted-foreground mb-2">Coût estimé de l&apos;inaction IA</p>
                   <p className="text-5xl md:text-6xl font-black text-accent mb-2">
                     {formatCurrency(results.total)}
                   </p>

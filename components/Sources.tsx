@@ -52,14 +52,14 @@ export default function Sources() {
             Méthodologie & <span className="text-accent">Sources</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Des données fiables issues d'institutions reconnues et d'entretiens terrain
+            Des données fiables issues d&apos;institutions reconnues et d&apos;entretiens terrain
           </p>
         </div>
 
         {/* Methodology Card */}
         <Card className="mb-8 border-2 shadow-lg">
           <CardHeader>
-            <CardTitle className="text-2xl">Comment j'ai réfléchi</CardTitle>
+            <CardTitle className="text-2xl">Comment j&apos;ai réfléchi</CardTitle>
             <CardDescription className="text-base">
               Une approche scientifique basée sur des données vérifiables
             </CardDescription>
@@ -67,7 +67,7 @@ export default function Sources() {
           <CardContent className="space-y-4">
             <div className="prose prose-sm max-w-none text-foreground">
               <p className="text-muted-foreground leading-relaxed">
-                Ce calculateur s'appuie sur <span className="font-semibold text-foreground">63 entretiens</span> menés
+                Ce calculateur s&apos;appuie sur <span className="font-semibold text-foreground">63 entretiens</span> menés
                 auprès de dirigeants de PME françaises, croisés avec des données institutionnelles vérifiées.
                 La méthodologie combine :
               </p>
@@ -78,11 +78,11 @@ export default function Sources() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-accent font-bold">•</span>
-                  <span>État de l'adoption IA dans les PME françaises (France Num, Bpifrance)</span>
+                  <span>État de l&apos;adoption IA dans les PME françaises (France Num, Bpifrance)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-accent font-bold">•</span>
-                  <span>Gains de productivité avec l'IA générative (MIT Sloan)</span>
+                  <span>Gains de productivité avec l&apos;IA générative (MIT Sloan)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-accent font-bold">•</span>

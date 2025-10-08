@@ -16,7 +16,7 @@ export default function Navbar() {
           {/* Logo / Brand */}
           <div className="flex-shrink-0">
             <h1 className="text-lg font-bold text-foreground">
-              Le Prix de l'<span className="text-accent">Inaction</span>
+              Le Prix de l&apos;<span className="text-accent">Inaction</span>
             </h1>
           </div>
 

@@ -30,7 +30,7 @@ export default function Hero() {
 
         {/* Subheadline */}
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-          Votre entreprise perd de l'argent chaque jour. Découvrez combien exactement.
+          Votre entreprise perd de l&apos;argent chaque jour. Découvrez combien exactement.
         </p>
 
         {/* Animated counter - key credibility metric */}
