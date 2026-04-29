@@ -23,7 +23,7 @@ export default function Hero() {
       {/* Subtle gradient background - Linear.app inspired */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/30 -z-10" />
 
-      <div className={`max-w-4xl mx-auto text-center space-y-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+      <div className={`max-w-6xl mx-auto text-center space-y-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
         {/* Main headline */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight text-balance leading-tight font-heading">
           Calculez le <span className="text-accent">vrai coût</span> de votre inaction IA

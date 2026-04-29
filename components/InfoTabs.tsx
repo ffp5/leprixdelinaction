@@ -18,7 +18,7 @@ export default function InfoTabs() {
 
   return (
     <section id="impact" className="section-spacing px-4">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8 space-y-3">
           <h2 className="text-3xl md:text-4xl font-bold font-heading tracking-tight">
             Comprendre l&apos;impact, sans surcharge

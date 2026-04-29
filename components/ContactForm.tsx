@@ -66,7 +66,7 @@ export default function ContactForm() {
 
   return (
     <section id="contact" className="section-spacing px-4 bg-muted/20">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <Card className="border-2 shadow-sm">
           <CardHeader>
             <CardTitle className="text-2xl font-heading">Vous préférez ne pas passer en visio ?</CardTitle>
