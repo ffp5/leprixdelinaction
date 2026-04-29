@@ -4,8 +4,6 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Slider } from "@/components/ui/slider"
 import { Progress } from "@/components/ui/progress"
 import {
   ChartBarIcon,
@@ -18,6 +16,7 @@ import {
   ArrowLeftIcon
 } from "@heroicons/react/24/outline"
 import { calculerCoutInaction, formatCurrency, type Secteur, type NiveauAdoption, type CATranche } from "@/lib/calculator"
+import CalendlyButton from "@/components/CalendlyButton"
 
 type Step = 1 | 2 | 3
 
@@ -99,17 +98,17 @@ export default function Calculator() {
                   <label className="text-sm font-semibold text-foreground">
                     Secteur d&apos;activité <span className="text-accent">*</span>
                   </label>
-                  <Select value={secteur} onValueChange={(v) => setSecteur(v as Secteur)}>
-                    <SelectTrigger className="w-full" aria-label="Sélectionner votre secteur">
-                      <SelectValue placeholder="Sélectionnez votre secteur" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="conseil">Conseil / Services</SelectItem>
-                      <SelectItem value="industrie">Industrie</SelectItem>
-                      <SelectItem value="commerce">Commerce</SelectItem>
-                      <SelectItem value="tech">Tech / Digital</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <select
+                    value={secteur}
+                    onChange={(e) => setSecteur(e.target.value as Secteur)}
+                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-xs outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+                    aria-label="Sélectionner votre secteur"
+                  >
+                    <option value="conseil">Conseil / Services</option>
+                    <option value="industrie">Industrie</option>
+                    <option value="commerce">Commerce</option>
+                    <option value="tech">Tech / Digital</option>
+                  </select>
                 </div>
 
                 {/* Nombre de salariés */}
@@ -134,17 +133,17 @@ export default function Calculator() {
                   <label className="text-sm font-semibold text-foreground">
                     Chiffre d&apos;affaires annuel <span className="text-accent">*</span>
                   </label>
-                  <Select value={caTranche} onValueChange={(v) => setCATranche(v as CATranche)}>
-                    <SelectTrigger className="w-full" aria-label="Sélectionner votre CA">
-                      <SelectValue placeholder="Sélectionnez votre CA" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="0-1M">0 - 1M€</SelectItem>
-                      <SelectItem value="1-5M">1M€ - 5M€</SelectItem>
-                      <SelectItem value="5-10M">5M€ - 10M€</SelectItem>
-                      <SelectItem value="10M+">10M€ +</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <select
+                    value={caTranche}
+                    onChange={(e) => setCATranche(e.target.value as CATranche)}
+                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-xs outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+                    aria-label="Sélectionner votre CA"
+                  >
+                    <option value="0-1M">0 - 1M€</option>
+                    <option value="1-5M">1M€ - 5M€</option>
+                    <option value="5-10M">5M€ - 10M€</option>
+                    <option value="10M+">10M€ +</option>
+                  </select>
                 </div>
               </div>
             )}
@@ -157,17 +156,17 @@ export default function Calculator() {
                   <label className="text-sm font-semibold text-foreground">
                     Niveau d&apos;adoption de l&apos;IA <span className="text-accent">*</span>
                   </label>
-                  <Select value={niveauAdoption} onValueChange={(v) => setNiveauAdoption(v as NiveauAdoption)}>
-                    <SelectTrigger className="w-full" aria-label="Niveau adoption IA">
-                      <SelectValue placeholder="Quel est votre niveau d&apos;adoption ?" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="Aucun">Aucun usage</SelectItem>
-                      <SelectItem value="Tests ponctuels">Tests ponctuels</SelectItem>
-                      <SelectItem value="Usage occasionnel">Usage occasionnel</SelectItem>
-                      <SelectItem value="Usage régulier">Usage régulier</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <select
+                    value={niveauAdoption}
+                    onChange={(e) => setNiveauAdoption(e.target.value as NiveauAdoption)}
+                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm shadow-xs outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50"
+                    aria-label="Niveau adoption IA"
+                  >
+                    <option value="Aucun">Aucun usage</option>
+                    <option value="Tests ponctuels">Tests ponctuels</option>
+                    <option value="Usage occasionnel">Usage occasionnel</option>
+                    <option value="Usage régulier">Usage régulier</option>
+                  </select>
                 </div>
 
                 <div className="pt-4 space-y-6">
@@ -181,13 +180,14 @@ export default function Calculator() {
                       <label className="text-sm text-foreground">Rédaction (emails, rapports, contenus)</label>
                       <span className="text-sm font-semibold text-primary">{redaction}%</span>
                     </div>
-                    <Slider
-                      value={[redaction]}
-                      onValueChange={(v) => setRedaction(v[0])}
+                    <input
+                      type="range"
+                      value={redaction}
+                      onChange={(e) => setRedaction(Number(e.target.value))}
                       min={0}
                       max={100}
                       step={5}
-                      className="touch-pan-y"
+                      className="w-full accent-primary cursor-pointer"
                       aria-label="Pourcentage processus manuels rédaction"
                     />
                   </div>
@@ -198,13 +198,14 @@ export default function Calculator() {
                       <label className="text-sm text-foreground">Veille et recherche d&apos;information</label>
                       <span className="text-sm font-semibold text-primary">{veille}%</span>
                     </div>
-                    <Slider
-                      value={[veille]}
-                      onValueChange={(v) => setVeille(v[0])}
+                    <input
+                      type="range"
+                      value={veille}
+                      onChange={(e) => setVeille(Number(e.target.value))}
                       min={0}
                       max={100}
                       step={5}
-                      className="touch-pan-y"
+                      className="w-full accent-primary cursor-pointer"
                       aria-label="Pourcentage processus manuels veille"
                     />
                   </div>
@@ -215,13 +216,14 @@ export default function Calculator() {
                       <label className="text-sm text-foreground">Reporting et analyse de données</label>
                       <span className="text-sm font-semibold text-primary">{reporting}%</span>
                     </div>
-                    <Slider
-                      value={[reporting]}
-                      onValueChange={(v) => setReporting(v[0])}
+                    <input
+                      type="range"
+                      value={reporting}
+                      onChange={(e) => setReporting(Number(e.target.value))}
                       min={0}
                       max={100}
                       step={5}
-                      className="touch-pan-y"
+                      className="w-full accent-primary cursor-pointer"
                       aria-label="Pourcentage processus manuels reporting"
                     />
                   </div>
@@ -232,13 +234,14 @@ export default function Calculator() {
                       <label className="text-sm text-foreground">Autres tâches administratives</label>
                       <span className="text-sm font-semibold text-primary">{autre}%</span>
                     </div>
-                    <Slider
-                      value={[autre]}
-                      onValueChange={(v) => setAutre(v[0])}
+                    <input
+                      type="range"
+                      value={autre}
+                      onChange={(e) => setAutre(Number(e.target.value))}
                       min={0}
                       max={100}
                       step={5}
-                      className="touch-pan-y"
+                      className="w-full accent-primary cursor-pointer"
                       aria-label="Pourcentage processus manuels autres"
                     />
                   </div>
@@ -341,19 +344,18 @@ export default function Calculator() {
 
                 {/* CTA */}
                 <div className="pt-4 space-y-3">
-                  <Button
-                    className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-6 text-lg"
-                    size="lg"
-                    asChild
-                  >
-                    <a
-                      href={`mailto:sf.florido-poka@luwai.fr?subject=Demande d'audit personnalisé IA&body=Bonjour,%0D%0A%0D%0AJe souhaite réaliser un audit personnalisé suite à mon calcul sur leprixdelinaction.fr.%0D%0A%0D%0AMes résultats :%0D%0A- Coût annuel estimé : ${formatCurrency(results.total)}%0D%0A- Inefficacité opérationnelle : ${formatCurrency(results.inefficacite)}%0D%0A- Croissance manquée : ${formatCurrency(results.opportunites)}%0D%0A- Coûts cachés : ${formatCurrency(results.coutsCache)}%0D%0A%0D%0AMon profil :%0D%0A- Secteur : ${secteur}%0D%0A- Nombre de salariés : ${nbSalaries}%0D%0A- CA annuel : ${caTranche}%0D%0A- Niveau adoption IA : ${niveauAdoption}%0D%0A%0D%0AMerci de me recontacter.%0D%0A%0D%0ACordialement`}
-                    >
-                      Faire mon audit personnalisé
+                  <CalendlyButton
+                    source="calculator-results"
+                    text="Transformer ces pertes (appel 15 min)"
+                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
+                  />
+                  <Button variant="outline" size="lg" className="w-full py-6 text-lg rounded-xl" asChild>
+                    <a href="https://luwai.fr" target="_blank" rel="noopener noreferrer">
+                      Voir comment LUWAI accompagne les PME
                     </a>
                   </Button>
                   <p className="text-xs text-center text-muted-foreground">
-                    Un expert vous contactera sous 24h pour analyser ces résultats
+                    Vous repartez avec un plan concret (cas d’usage, ROI, risques, priorités).
                   </p>
                 </div>
               </div>

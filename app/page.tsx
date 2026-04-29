@@ -1,7 +1,10 @@
 import type { Metadata } from "next"
 import Navbar from "@/components/Navbar"
 import Hero from "@/components/Hero"
+import InfoTabs from "@/components/InfoTabs"
 import Calculator from "@/components/Calculator"
+import NextStepCTA from "@/components/NextStepCTA"
+import ContactForm from "@/components/ContactForm"
 import Sources from "@/components/Sources"
 
 export const metadata: Metadata = {
@@ -29,7 +32,10 @@ export default function Home() {
       <Navbar />
       <main className="min-h-screen pt-16">
         <Hero />
+        <InfoTabs />
         <Calculator />
+        <NextStepCTA />
+        <ContactForm />
         <Sources />
       </main>
     </>

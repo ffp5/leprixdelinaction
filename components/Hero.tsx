@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowDownIcon, CalculatorIcon } from "@heroicons/react/24/outline"
 import CountUp from "react-countup"
 import { useEffect, useState } from "react"
+import CalendlyButton from "@/components/CalendlyButton"
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false)
@@ -24,13 +25,13 @@ export default function Hero() {
 
       <div className={`max-w-4xl mx-auto text-center space-y-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
         {/* Main headline */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight text-balance leading-tight">
-          Calculez le <span className="text-accent">VRAI coût</span> de votre inaction IA
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight text-balance leading-tight font-heading">
+          Calculez le <span className="text-accent">vrai coût</span> de votre inaction IA
         </h1>
 
         {/* Subheadline */}
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-          Votre entreprise perd de l&apos;argent chaque jour. Découvrez combien exactement.
+          Votre entreprise perd du temps, des opportunités et des marges chaque jour. Découvrez combien exactement.
         </p>
 
         {/* Animated counter - key credibility metric */}
@@ -66,15 +67,24 @@ export default function Hero() {
             Calculer mes pertes maintenant
           </Button>
 
-          <Button
-            onClick={scrollToCalculator}
-            variant="ghost"
-            size="lg"
-            className="font-medium group"
-          >
-            Voir comment ça marche
-            <ArrowDownIcon className="w-4 h-4 ml-2 group-hover:translate-y-1 transition-transform" />
-          </Button>
+          <div className="flex items-center gap-3">
+            <CalendlyButton
+              text="Parler à un expert"
+              source="hero"
+              variant="outline"
+              className="font-semibold border-primary/30 hover:border-primary hover:bg-primary/5"
+              size="lg"
+            />
+            <Button
+              onClick={scrollToCalculator}
+              variant="ghost"
+              size="lg"
+              className="font-medium group"
+            >
+              Voir comment ça marche
+              <ArrowDownIcon className="w-4 h-4 ml-2 group-hover:translate-y-1 transition-transform" />
+            </Button>
+          </div>
         </div>
 
         {/* Trust indicator */}

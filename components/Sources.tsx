@@ -42,10 +42,34 @@ export default function Sources() {
       url: "https://economics.mit.edu/sites/default/files/inline-files/Noy_Zhang_1.pdf"
     },
     {
+      icon: <BuildingLibraryIcon className="w-6 h-6" />,
+      title: "INSEE",
+      description: "Intelligence artificielle dans les entreprises (France, 2024)",
+      url: "https://www.insee.fr/fr/statistiques/8616837"
+    },
+    {
+      icon: <AcademicCapIcon className="w-6 h-6" />,
+      title: "OCDE",
+      description: "AI adoption by SMEs (2025) + diffusion parmi les entreprises",
+      url: "https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/12/ai-adoption-by-small-and-medium-sized-enterprises_9c48eae6/426399c1-en.pdf"
+    },
+    {
       icon: <AcademicCapIcon className="w-6 h-6" />,
       title: "Boston Consulting Group",
       description: "AI Adoption in 2024: 74% of Companies Struggle",
       url: "https://www.bcg.com/press/24october2024-ai-adoption-in-2024-74-of-companies-struggle-to-achieve-and-scale-value"
+    },
+    {
+      icon: <DocumentChartBarIcon className="w-6 h-6" />,
+      title: "McKinsey Global Institute",
+      description: "Economic potential of generative AI ($2.6–$4.4T/an)",
+      url: "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier"
+    },
+    {
+      icon: <AcademicCapIcon className="w-6 h-6" />,
+      title: "Stanford HAI",
+      description: "AI Index (tendances adoption IA/GenAI en entreprise)",
+      url: "https://hai.stanford.edu/ai-index"
     }
   ]
 
